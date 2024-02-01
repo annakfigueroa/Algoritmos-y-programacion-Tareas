@@ -46,7 +46,7 @@ options = {
     "atq3": (30, 0, "ascuas"),
     }
  
-while punticos_jugador[0]>0 and punticos_oponente[0]>0: 
+while punticos_jugador[0] >0 and punticos_oponente[0] >0: 
     ataque_jugador = input("Ataque:  ")
     while not ataque_jugador: ""
     if ataque_jugador== options["atq1"] [2]:
@@ -54,11 +54,11 @@ while punticos_jugador[0]>0 and punticos_oponente[0]>0:
             punticos_oponente = punticos_oponente[0], punticos_oponente[1] - options["atq1"][1]
             if punticos_oponente[1]<=0:
                 punticos_oponente = punticos_oponente[0], 1
-    elif ataque_jugador ==options["atq2"] [2]:
-            punticos_oponente = punticos_oponente[0] - punticos_oponente["atq2"][0] * (100/punticos_oponente[1]), punticos_oponente[1]
-            print ("La defensa del oponente ha bajado")
+    elif ataque_jugador ==options ["atq2"][2]: 
+            punticos_oponente = punticos_oponente[0] - options["atq2"][0] * (punticos_oponente[1]/100), punticos_oponente[1]
+            print ("Los puntos de vida del oponente han bajado")
     elif ataque_jugador==options["atq3"] [2]:
-            print ("La defensa del oponente ha bajado")
+            print ("Los puntos de vida del oponente han bajado")
             punticos_oponente = punticos_oponente[0]-options ["atq3"][0], punticos_oponente[1]
     else:
         print("Qué estás haciendo? tus ataques son",options)
@@ -67,24 +67,23 @@ while punticos_jugador[0]>0 and punticos_oponente[0]>0:
     if ataque_oponente==1: #latigo
             print ("Defensa oponente: latigo")
             print('Tu defensa ha bajado')
-            punticos_jugador = punticos_jugador[0]-1, punticos_jugador[1]
+            punticos_jugador = punticos_jugador[0], punticos_jugador[1]-1
             if punticos_jugador[1]<=0:
                     punticos_jugador = punticos_oponente[0], 1
     elif ataque_oponente==2: #pistola de agua
-            punticos_jugador= punticos_jugador[0]-35 * (punticos_jugador[1]/100)
+            punticos_jugador= punticos_jugador[0]-35 * (punticos_jugador[1]/100), punticos_jugador[1]
             print ("Defensa oponente: pistola de agua")
-            print('Tu defensa ha bajado')
+            print('Tus puntos de vida han bajado')
 
     elif ataque_oponente==3: #balazo
             punticos_jugador=punticos_jugador[0]-30, punticos_jugador[1]
             print ("Defensa oponente: balazo")
-            print('Tu defensa ha bajado')
+            print('Tus puntos de vida han bajado')
 
 if punticos_jugador[0]<=0:
-    punticos_jugador[0]=0, punticos_jugador[1]
     print ("Lo siento, has perdido")
 if punticos_oponente[0] <=0:
-    punticos_oponente[0]=0, punticos_oponente[1]
     print ("Felicidades, has ganado")
 elif punticos_oponente[0]<=0 and punticos_jugador[0]<=0:
     print ("empate")
+
